@@ -16,8 +16,8 @@ Orchestrator instructions
 4. Do not spawn the next worker until the current worker has fully completed its outputs.
 5. Review and retry policy (after each worker finishes):
   * Inspect the worker’s outputs against @WORKER.md acceptance criteria.
-  * If outputs are missing, incorrect, or below standard, spawn a new worker for the same transcript file.
-  * If outputs meet the standard, continue to the next transcript file.
+  * If any outputs are missing, incorrect, or below standard, steer the agent on the same transcript file and explicitly specify what was wrong and what needs to be fixed.
+  * If outputs meet the standard, stop and close the completed agent and continue to the next transcript file.
 6. Final verification (after all transcript files are processed):
   * Verify every transcript file has the required outputs, in the required locations, and meets the quality bar.
   * If anything is incomplete or fails criteria, spawn a worker to fix the specific gap(s), again one at a time.
